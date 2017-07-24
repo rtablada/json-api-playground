@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const express = require('express');
 const ListController = require('./controller/list');
 const ItemController = require('./controller/item');
@@ -7,6 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(bodyParser.json({}));
+app.use(cors());
 
 const resource = (name, Controller) => {
   const controller = new Controller();
