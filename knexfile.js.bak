@@ -1,0 +1,21 @@
+require('dotenv').config();
+
+const config = {
+  development: {
+    client: 'pg',
+    connection: {
+      host: 'localhost',
+      user: process.env.DATABASE_USER,
+      password: process.env.DATABASE_PASSWORD,
+      database: process.env.DATABASE_DATABASE,
+      charset: 'utf8',
+    },
+  },
+  production: {
+    client: 'pg',
+    connection: `${process.env.DATABASE_URL}?ssl=true`,
+    charset: 'utf8',
+  },
+};
+
+module.exports = config;
