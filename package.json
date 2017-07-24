@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "migrate:up": "knex migrate:latest",
+    "migrate:down": "knex migrate:rollback"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
